@@ -1,3 +1,5 @@
+/* JAVASCRIPT FOR COLOR GAME */
+
 //COLORS
 var red = 0;
 var green = 0;
@@ -20,9 +22,9 @@ function calcScore() {
   //RED MATH
   if (userRed > red) {
     redOffset = (userRed - red) / 255;
-    
+
     //LOSE POINTS
-    if(redOffset > 0.3){
+    if (redOffset > 0.3) {
       redOffset = -redOffset;
     }
   }
@@ -31,14 +33,19 @@ function calcScore() {
   }
   if (userRed < red) {
     redOffset = (red - userRed) / 255;
+
+    //LOSE POINTS
+    if (redOffset > 0.3) {
+      redOffset = -redOffset;
+    }
   }
 
   //GREEN MATH
   if (userGreen > green) {
     greenOffset = (userGreen - green) / 255;
-    
+
     //LOSE POINTS
-    if(greenOffset > 0.3){
+    if (greenOffset > 0.3) {
       greenOffset = -greenOffset;
     }
   }
@@ -47,14 +54,19 @@ function calcScore() {
   }
   if (userGreen < green) {
     greenOffset = (green - userGreen) / 255;
+
+    //LOSE POINTS
+    if (greenOffset > 0.3) {
+      greenOffset = -greenOffset;
+    }
   }
 
   //BLUE MATH
   if (userBlue > blue) {
     blueOffset = (userBlue - blue) / 255;
-    
+
     //LOSE POINTS
-    if(blueOffset > 0.3){
+    if (blueOffset > 0.3) {
       blueOffset = -blueOffset;
     }
   }
@@ -63,13 +75,18 @@ function calcScore() {
   }
   if (userBlue < blue) {
     blueOffset = (blue - userBlue) / 255;
+
+    //LOSE POINTS
+    if (blueOffset > 0.3) {
+      blueOffset = -blueOffset;
+    }
   }
 
   console.log("redOffset: " + redOffset + "\ngreenOffset: " + greenOffset + "\nblueOffset: " + blueOffset);
-  
+
   //AVERAGE SCORE
-  score += Math.round((redOffset+greenOffset+blueOffset)/3 *100);
-  console.log("score: "+score)
+  score += Math.round((redOffset + greenOffset + blueOffset) / 3 * 100);
+  console.log("score: " + score)
 
 }
 
@@ -143,3 +160,5 @@ window.onload = background;
 
 //COLLECTS NUMBER OF VALUE BAR
 document.addEventListener("mousemove", player);
+
+//BRB OFF TO GET SOME CAFFEINE
