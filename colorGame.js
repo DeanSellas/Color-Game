@@ -24,7 +24,7 @@ function calcScore() {
     redOffset = (userRed - red) / 255;
 
     //LOSE POINTS
-    if (redOffset > 0.3) {
+    if (redOffset > 0.35) {
       redOffset = -redOffset;
     }
   }
@@ -35,7 +35,7 @@ function calcScore() {
     redOffset = (red - userRed) / 255;
 
     //LOSE POINTS
-    if (redOffset > 0.3) {
+    if (redOffset > 0.35) {
       redOffset = -redOffset;
     }
   }
@@ -45,7 +45,7 @@ function calcScore() {
     greenOffset = (userGreen - green) / 255;
 
     //LOSE POINTS
-    if (greenOffset > 0.3) {
+    if (greenOffset > 0.35) {
       greenOffset = -greenOffset;
     }
   }
@@ -56,7 +56,7 @@ function calcScore() {
     greenOffset = (green - userGreen) / 255;
 
     //LOSE POINTS
-    if (greenOffset > 0.3) {
+    if (greenOffset > 0.35) {
       greenOffset = -greenOffset;
     }
   }
@@ -66,7 +66,7 @@ function calcScore() {
     blueOffset = (userBlue - blue) / 255;
 
     //LOSE POINTS
-    if (blueOffset > 0.3) {
+    if (blueOffset > 0.35) {
       blueOffset = -blueOffset;
     }
   }
@@ -77,7 +77,7 @@ function calcScore() {
     blueOffset = (blue - userBlue) / 255;
 
     //LOSE POINTS
-    if (blueOffset > 0.3) {
+    if (blueOffset > 0.35) {
       blueOffset = -blueOffset;
     }
   }
@@ -87,7 +87,6 @@ function calcScore() {
   //AVERAGE SCORE
   score += Math.round((redOffset + greenOffset + blueOffset) / 3 * 100);
   console.log("score: " + score)
-
 }
 
 //RANGEBAR
@@ -107,7 +106,6 @@ function player() {
   $("#userBox").css({
     "background-color": "rgb(" + userRed + "," + userGreen + "," + userBlue + ")"
   });
-
 }
 
 //LOGIC FOR BUTTON
